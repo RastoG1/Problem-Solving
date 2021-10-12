@@ -1,0 +1,9 @@
+max_num = 0
+
+for i in range(999, 100, -1):
+    for j in range(999,100,-1):
+        num = i*j
+        sumS = str(num)
+        if sumS == sumS[::-1] and num > max_num:
+            max_num = num
+print(max_num)
