@@ -1,0 +1,20 @@
+class Solution(object):
+    def longestCommonPrefix(self, strs):
+        """
+        :type strs: List[str]
+        :rtype: str
+        """
+        if len(strs) == 0:
+            return ""
+        
+        comm = [list(e) for e in zip(*list([list(x) for x in strs]))]
+        
+        index = None
+        
+        for i, x in enumerate(comm):
+            if len(set(x)) == 1:
+                index = i
+            else:
+                break
+        
+        return ''.join(map(str, list(strs[0])[:index+1])) if index is not None else "" 
